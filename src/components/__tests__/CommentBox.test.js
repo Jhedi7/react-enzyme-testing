@@ -4,11 +4,16 @@ import { mount } from 'enzyme';
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 import '../../setupTest';
+import Root from 'Root';
 
 let wrapped;
 
 beforeEach(() => {
-   wrapped = mount(<CommentBox />);
+   wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+   )
 });
 
 afterEach(() => {
