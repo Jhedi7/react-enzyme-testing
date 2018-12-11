@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+
+const mapStateToProps = state => {
+  return { comments: state.comments };
+}
+
 class CommentList extends Component {
 
   renderComments() {
@@ -20,8 +25,6 @@ class CommentList extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { comments: state.comments };
-}
+
 
 export default connect(mapStateToProps)(CommentList);
